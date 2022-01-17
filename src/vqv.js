@@ -15,7 +15,17 @@
       trabalho na Trybe e mando muito em programação!
       #VQV!'
 */
+// consegui pegando como referência neste site: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/undefined
 
-const vqv = () => {};
+const vqv = (name, age) => {
+  if (typeof name === 'undefined') {
+    return undefined;
+  }
+    const answer = `Oi, meu nome é ${name}!
+Tenho ${age} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
+  return answer;
+};
 
 module.exports = vqv;
