@@ -25,33 +25,20 @@ const circle = require('../src/circle');
 
 describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('Verifica se ao receber um raio, a função `circle` retorna um objeto contedos os valores esperados', () => {
-    expect(Object.keys(circle(1))).toBe('object');
-  });
-    
-  it('Teste se circle retorna undefined, caso o parâmetro passado não seja um número', () => {
-    expect(circle(!'number')).toBe(undefined);
-  });
-  it('Teste se circle retorna um objeto', () => {
-    expect(typeof circle(1)).toBe('object');
-  });
-    
-  it('Teste se o objeto retornado tem 3 propriedades', () => {
-    expect(Objecty.keys(circle(3).length)).toBe(3);
-  });
-    
-  it('Teste se a função, quando não recebe nenhum parâmetro, retorna undefined', () => {
+
+  //Teste se circle retorna undefined, caso o parâmetro passado não seja um número
+  //Teste se circle retorna um objeto
+  //Teste se o objeto retornado tem 3 propriedades
+  //Teste se a função, quando não recebe nenhum parâmetro, retorna undefined
+  //Teste se dentro do objeto retornado, a função retorna uma key com value igual a circunferência correta para um círculo de raio 2 
+  //Teste se dentro do objeto retornado, a função retorna uma key com value igual a área correta para um círculo de raio 3', => {
+  // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
+    expect(circle('1')).toBe(undefined);
+    expect(typeof circle(3)).toBe('object');
+    expect(Object.keys(circle(2)).length).toBe(3);
     expect(circle()).toBeUndefined();
-  });
-    
-  it('Teste se dentro do objeto retornado, a função retorna uma key com value igual a circunferência correta para um círculo de raio 2', () => {
-    expect(circle(3)).toHaveProperty('radius', 3);
-  });
-    
-  it('Teste se dentro do objeto retornado, a função retorna uma key com value igual a área correta para um círculo de raio 3', => {
-    expect(circle(3)).toHaveProperty('area', 28.259999999999998);
-  });
-    
-    // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    
+    expect(parseFloat((circle(2).circumference).toPrecision(4))).toBe(12.56);
+    expect(parseFloat((circle(3).area).toPrecision(4))).toBe(28.26);
+    expect(circle(3)).toEqual({radius: 3, area: (3.14 * 3 * 3), circumference: 18.84}); // Construída com ajuda na Monitoria Summer do Douglas e com a ajuda do José Carlos da Turma 19B 
   });
 });
